@@ -1,0 +1,42 @@
+.features-header {
+  @include clear-list();
+}
+
+.features-header__item {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  &::before {
+    content: "";
+    display: block;
+    margin: auto;
+    margin-bottom: rem(8);
+    width: 33%;
+    max-width: 50px;
+    border-top: 2px solid $accent-color;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  .features-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .features-header__item {
+    margin-right: rem(35);
+    margin-bottom: 0;
+
+    &::before {
+      margin-bottom: rem(35);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

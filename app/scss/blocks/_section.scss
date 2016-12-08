@@ -1,0 +1,40 @@
+.section {
+
+  &--invert-color {
+    color: #fff;
+  }
+}
+
+.section__inner {
+  padding-top: 70px;
+  padding-bottom: 65px;
+}
+
+.section__header {
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.section__title {
+  margin: 0;
+  margin-bottom: 5px;
+  font-weight: normal;
+  font-family: "bruskovayaplain";
+  font-size: rem(36);
+}
+
+.section__subtitle {
+  font-size: rem(30);
+  p {
+    margin-bottom: 0;
+  }
+
+  em {
+    font-style: normal;
+    color: $accent-color;
+  }
+}
+
+.section__body {
+
+}

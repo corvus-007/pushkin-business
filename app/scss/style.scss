@@ -1,0 +1,29 @@
+@import "normalize";
+
+@import "variables";
+@import "functions";
+@import "mixins";
+
+// Global
+@import "global/fonts";
+@import "global/base";
+@import "global/grid";
+
+// Vendors
+// @import "vendors/slick";
+@import "vendors/magnific-popup";
+
+// Blocks
+@import "blocks/buttons";
+@import "blocks/form";
+@import "blocks/cta-form";
+@import "blocks/main-panel";
+@import "blocks/phone-panel";
+@import "blocks/main-header";
+@import "blocks/features-header";
+@import "blocks/styled-box";
+@import "blocks/section";
+@import "blocks/intro-section";
+@import "blocks/cta-section";
+@import "blocks/about-items-list";
+@import "blocks/popup";

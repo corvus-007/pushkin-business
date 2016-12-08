@@ -1,0 +1,18 @@
+.cta-section {
+
+}
+
+.cta-section__note {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+@media (min-width: $media-tablet) {
+  .cta-section__note {
+    font-size: 13px;
+    margin-left: rem(50);
+    margin-right: rem(50);
+  }
+}

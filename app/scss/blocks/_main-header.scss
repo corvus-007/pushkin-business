@@ -1,0 +1,41 @@
+.main-header {
+  background-color: rgba($base-color, 0.8);
+  background-image: linear-gradient(rgba($base-color, 0.8), rgba($base-color, 0.8)),
+                    url("img/bg-main-header.jpg");
+  background-image: linear-gradient(rgba($base-color, 0.8), rgba($base-color, 0.8)),
+                    image-set(
+                      url("img/bg-main-header.jpg") 1x,
+                      url("img/bg-main-header@2x.jpg") 2x
+                    );
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  color: #fff;
+}
+
+.main-header__inner {
+  padding-top: 100px;
+  padding-bottom: 40px;
+}
+
+.main-header__title {
+  margin: 0;
+  margin-bottom: rem(30);
+  font-size: rem(78);
+  font-weight: 700;
+  text-align: center;
+  line-height: normal;
+  font-family: "bruskovayaplain";
+  
+  span {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: rem(30);
+  }
+}
+
+.main-header__logo {
+  text-align: center;
+  margin-bottom: rem(35);
+}

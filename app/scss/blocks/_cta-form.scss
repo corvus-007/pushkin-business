@@ -1,0 +1,16 @@
+.cta-form {
+}
+
+.cta-form__intro {
+  margin-bottom: 1.2em;
+  font-size: rem(20);
+  text-align: center;
+}
+
+@media (min-width: $media-tablet) {
+  .cta-form {
+    .form-item {
+      margin-bottom: 0;
+    }
+  }
+}

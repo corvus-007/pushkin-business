@@ -1,0 +1,51 @@
+.main-panel {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  &--header {
+
+  }
+
+  &--footer {
+    color: #b5b5b5;
+    background-color: #292627;
+  }
+}
+
+.main-panel__inner {
+  text-align: center;
+}
+
+.main-panel__logo {
+  margin-bottom: 1.5rem;
+}
+
+.main-panel__phone {
+  margin-bottom: 1.5rem;
+}
+
+.main-panel__callback {
+  
+}
+
+@media (min-width: $media-tablet) {
+  .main-panel__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  .main-panel__logo {
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+
+  .main-panel__phone {
+    margin-bottom: 0;
+  }
+
+  .main-panel__callback {
+    margin-left: 25px;
+  }
+}
+
+

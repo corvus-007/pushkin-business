@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-wrapper">
+    @@include('blocks/main-panel-header.html')
+    <header class="main-header">
+      <div class="main-header__inner container">
+        <h1 class="main-header__title">
+          ПушкинЪ
+          <span>плаза</span>
+        </h1>
+        <div class="main-header__logo">
+          <img src="img/logo-hat.png" srcset="img/logo-hat@2x.png 2x" alt="" />
+        </div>
+
+        <div class="styled-box">
+          <div class="styled-box__title">
+            <span>Современный бизнес-центр</span>
+          </div>
+          <div class="styled-box__body">
+            <ul class="features-header">
+              <li class="features-header__item">
+                Уникальная архитектура здания позволяет охватывать торговые площади по совершенно новой технологии
+              </li>
+              <li class="features-header__item">
+                Уникальная архитектура здания позволяет охватывать торговые площади по совершенно новой технологии
+              </li>
+              <li class="features-header__item">
+                Уникальная архитектура здания позволяет охватывать торговые площади по совершенно новой технологии
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="section intro-section">
+        <div class="section__inner">
+          <header class="section__header container">
+            <h2 class="section__title">Бизнес-центр премиум класса</h2>
+          </header>
+
+          <div class="section__body">
+            <div class="about">
+              <ul class="about-items-list">
+                <li class="about-item">
+                  <b class="about-item__value">2</b>
+                  <span class="about-item__text">этажа <span>для бизнеса</span></span>
+                </li>
+                <li class="about-item">
+                  <span class="about-item__text about-item__text--left">более</span>
+                  <b class="about-item__value">764</b>
+                  <span class="about-item__text about-item__text--right">квадратных <span>метров</span></span>
+                </li>
+                <li class="about-item">
+                  <b class="about-item__value">35</b>
+                  <span class="about-item__text">торговых <span>площадей</span></span>
+                </li>
+              </ul>
+            </div>
+            <div class="container">
+              <div class="intro-section__text">
+                <p>Паркинг жилого комплекса «Пушкин Плаза» организован с учетом современных идей по формированию специальных зон парковки и движения автотранспорта, отделенных от прогулочных зон.</p>
+                <p>Новаторская концепция «Двор без машин» заключается в организации движения автомобилей в закрытом периметре двора, удаленном от зон для отдыха и игр детей.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-section">
+        <header class="section__header visuallyhidden">
+          <h2 class="section__title">Расположение жилого комплекса «Пушкин Плаза»</h2>
+        </header>
+        <img src="http://placehold.it/1920x600/5fd/fff/?text=map" alt="" />
+      </section>
+
+      <section class="section plan-section">
+        <div class="section__inner">
+          <header class="section__header container">
+            <h2 class="section__title">Планировки торговых площадей</h2>
+          </header>
+          <div class="plan-section__content container">
+            <img src="http://placehold.it/1920x700/5df/fff/?text=plan" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <div class="section cta-section">
+        <div class="section__inner container">
+          <div class="styled-box">
+            <div class="styled-box__title">
+              <span>Успейте забронировать помещение</span>
+            </div>
+            <div class="styled-box__body">
+              <form class="cta-form" action="" name="" method="post">
+                <p class="cta-form__intro">Оставьте заявку на бронирование интересующего помещения прямо сейчас!</p>
+                <div class="grid">
+                  <div class="form-item col-mobile-6 col-tablet-4">
+                    <input class="form-control" type="text" name="" placeholder="Ваше имя">
+                  </div>
+                  <div class="form-item col-mobile-6 col-tablet-4">
+                    <input class="form-control" type="tel" name="" placeholder="Ваш телефон*" required>
+                  </div>
+                  <div class="form-item col-tablet-4">
+                    <input class="button form-submit" type="submit" value="Забронировать">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="cta-section__note">
+            <p>Помните! Заполнение и отправка заявки вас ни к чему не обязывает, вы сможете просто проконсультироваться и, при желании, воспользоваться нашей услугой.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  @@include('blocks/main-panel-footer.html')
+
+  @@include('blocks/main-footer.html')
+
+  <!-- Обратный звонок -->
+  @@include('blocks/popup-callback.html')
+</body>
+</html>

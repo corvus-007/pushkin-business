@@ -1,4 +1,4 @@
-# Pushkin bisiness
+# Pushkin business
 
 Структура:
 * app/

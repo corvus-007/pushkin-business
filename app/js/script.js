@@ -34,23 +34,174 @@ function initializeMap() {
       zoom: 16,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       scrollwheel: false,
+      styles: [{
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#ebe3cd"
+        }]
+      }, {
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#523735"
+        }]
+      }, {
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "color": "#f5f1e6"
+        }]
+      }, {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "color": "#c9b2a6"
+        }]
+      }, {
+        "featureType": "administrative.land_parcel",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "color": "#dcd2be"
+        }]
+      }, {
+        "featureType": "administrative.land_parcel",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#ae9e90"
+        }]
+      }, {
+        "featureType": "landscape.natural",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#dfd2ae"
+        }]
+      }, {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#dfd2ae"
+        }]
+      }, {
+        "featureType": "poi",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#93817c"
+        }]
+      }, {
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
+        "stylers": [{
+          "color": "#a5b076"
+        }]
+      }, {
+        "featureType": "poi.park",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#447530"
+        }]
+      }, {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#f5f1e6"
+        }]
+      }, {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#fdfcf8"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#f8c967"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "color": "#e9bc62"
+        }]
+      }, {
+        "featureType": "road.highway.controlled_access",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#e98d58"
+        }]
+      }, {
+        "featureType": "road.highway.controlled_access",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "color": "#db8555"
+        }]
+      }, {
+        "featureType": "road.local",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#806b63"
+        }]
+      }, {
+        "featureType": "transit.line",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#dfd2ae"
+        }]
+      }, {
+        "featureType": "transit.line",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#8f7d77"
+        }]
+      }, {
+        "featureType": "transit.line",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "color": "#ebe3cd"
+        }]
+      }, {
+        "featureType": "transit.station",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#dfd2ae"
+        }]
+      }, {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [{
+          "color": "#b9d3c2"
+        }]
+      }, {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#92998d"
+        }]
+      }]
     };
   }
 
-  var mapProp = createProp({ lat: 53.239355, lng: 34.375 });
-  var map = new google.maps.Map(document.getElementById("contacts-map"), mapProp);
+  var mapProp = createProp(locationOffice);
+  var map = new google.maps.Map(document.getElementById("location-map"), mapProp);
   var markerPriem = new google.maps.Marker({
     position: locationOffice,
     map: map,
-    title: '«Агентство хороших квартир»'
+    title: '«Пушкин Плаза»'
   });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  var $contactsMap = $('#contacts-map');
+  var $locationMap = $('#location-map');
+  var locationMapWrapper = document.querySelector('.location-map-wrapper');
+  var jsLocationMapTrigger = document.querySelector('.js-location-map-trigger');
 
-  if ($contactsMap.length) {
+
+  if ($locationMap.length) {
     loadMapScript();
+
+    jsLocationMapTrigger.addEventListener('click', function(event) {
+      event.preventDefault();
+      locationMapWrapper.classList.remove('location-map-wrapper--collapsed')
+      locationMapWrapper.classList.add('location-map-wrapper--expanded')
+    });
   }
 
 
@@ -70,6 +221,97 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+  /*=============================
+  =            Plans            =
+  =============================*/
+  
+  var placesInfo = {
+    '1': {
+      area: '37,2',
+      statusCode: '1',
+      status: 'Продается'
+    },
+    '2': {
+      area: '47,24',
+      statusCode: '1',
+      status: 'Продается'
+    },
+    '3': {
+      area: '17,24',
+      statusCode: '1',
+      status: 'Продается'
+    },
+    '4': {
+      area: '13,8',
+      statusCode: '0',
+      status: 'Занят'
+    },
+    '5': {
+      area: '32,2',
+      statusCode: '1',
+      status: 'Продается'
+    },
+    '6': {
+      area: '74,24',
+      statusCode: '1',
+      status: 'Продается'
+    },
+    '7': {
+      area: '172,4',
+      statusCode: '1',
+      status: 'Продается'
+    },
+    '8': {
+      area: '71,24',
+      statusCode: '1',
+      status: 'Продается'
+    },
+  }
+  var plan = document.querySelector('.plan');
+  var ballonPlace = document.querySelector('.ballon-place');
+  var places = document.querySelectorAll('.place');
+
+  Array.prototype.forEach.call(places, function(place) {
+    var dataId = place.dataset.id;
+    if (placesInfo[dataId].statusCode === '0') {
+      place.classList.add('place--busy');
+    }
+  });
+
+  $(plan).on('click', '.place:not(.place--busy)', function(event) {
+
+    event.preventDefault();
+    var place = event.target;
+    var placeId = place.dataset.id;
+    var placeInfo = placesInfo[placeId];
+    var pointerPos = {
+      x: event.pageX,
+      y: event.pageY
+    }
+
+    document.querySelector('.ballon-place__area').textContent = placeInfo.area + 'м²';
+    document.querySelector('.ballon-place__status').textContent = placeInfo.status;
+
+    if (!place.classList.contains('place--clicked')) {
+      Array.prototype.forEach.call(places, function(place) {
+        place.classList.remove('place--clicked');
+      });
+      place.classList.add('place--clicked')
+      ballonPlace = document.querySelector('.ballon-place');
+      $(ballonPlace).show();
+    } else {
+      place.classList.remove('place--clicked')
+      $(ballonPlace).hide();
+    }
+
+    ballonPlace.style.left = pointerPos.x + 15 + 'px';
+    ballonPlace.style.top = pointerPos.y + 15 + 'px';
+  });
+
+  /*=====  End of Plans  ======*/
+  
+
+
 
 
 
@@ -82,10 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // clearMaskOnLostFocus: false,
     // jitMasking: true
   });
-  
+
   /*=====  End of Input mask  ======*/
 
-  
 });
-
-

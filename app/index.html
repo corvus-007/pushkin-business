@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Пушкин плаза</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="main-wrapper">
     @@include('blocks/main-panel-header.html')
+
     <header class="main-header">
       <div class="main-header__inner container">
         <h1 class="main-header__title">
@@ -80,7 +81,12 @@
         <header class="section__header visuallyhidden">
           <h2 class="section__title">Расположение жилого комплекса «Пушкин Плаза»</h2>
         </header>
-        <img src="http://placehold.it/1920x600/5fd/fff/?text=map" alt="" />
+        <div class="location-map-wrapper location-map-wrapper--collapsed">
+          <div class="location-map__trigger-wrapper">
+            <button class="location-map__trigger js-location-map-trigger" type="button">Показать “Пушкинъ Плаза” на карте</button>
+          </div>
+          <div class="location-map" id="location-map" style="height: 500px;"></div>
+        </div>
       </section>
 
       <section class="section plan-section">
@@ -89,7 +95,7 @@
             <h2 class="section__title">Планировки торговых площадей</h2>
           </header>
           <div class="plan-section__content container">
-            <img src="http://placehold.it/1920x700/5df/fff/?text=plan" alt="" />
+            <div class="plan">@@include('blocks/floor-1.svg')</div>
           </div>
         </div>
       </section>
@@ -123,10 +129,21 @@
         </div>
       </div>
     </main>
+    @@include('blocks/main-panel-footer.html')
   </div>
-  @@include('blocks/main-panel-footer.html')
 
   @@include('blocks/main-footer.html')
+
+  <div class="ballon-place">
+    <div class="ballon-place__logo">
+      <img src="img/logo-hat.png" srcset="img/logo-hat@2x.png 2x" alt="">
+    </div>
+    <div class="ballon-place__info">
+      <div class="ballon-place__area"></div>
+      <div class="ballon-place__status"></div>
+    </div>
+    <a class="button button--small js-trigger-inline-popup" href="#popup-callback">Оставить заявку</a>
+  </div>
 
   <!-- Обратный звонок -->
   @@include('blocks/popup-callback.html')

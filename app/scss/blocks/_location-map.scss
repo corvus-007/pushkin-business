@@ -1,0 +1,91 @@
+
+$transition-duration: 0.5s;
+.location-map-wrapper {
+  position: relative;
+  overflow: hidden;
+  transition: height $transition-duration;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  &::before {
+    top: 0;
+    bottom: 0;
+    background-color: rgba($base-color, 0.8);
+    z-index: 1;
+    transition: $transition-duration;
+  }
+
+  &::after {
+    bottom: 0;
+    height: 50px;
+    z-index: 2;
+    pointer-events: none;
+    background: url("img/location-map-decor.png") repeat-x bottom right / auto 100%;
+  }
+
+  &--collapsed {
+    height: 150px;
+  }
+
+  &--expanded {
+    height: 500px;
+
+    &::before {
+      opacity: 0;
+      visibility: hidden;
+      transition: $transition-duration, visibility 0s $transition-duration;
+    }
+  }
+}
+
+.location-map__trigger-wrapper {
+  position: absolute;
+  z-index: 2;
+  top: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  transition: $transition-duration;
+}
+
+.location-map-wrapper--expanded .location-map__trigger-wrapper {
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition-duration, visibility 0s $transition-duration;
+}
+
+.location-map__trigger {
+  display: inline-block;
+  padding: 5px;
+  border: none;
+  font-family: inherit;
+  font-size: rem(24);
+  font-weight: 700;
+  text-decoration: none;
+  line-height: normal;
+  outline: none;
+  user-select: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #fff;
+  background: none;
+}
+
+.location-map {
+  transition: filter $transition-duration $transition-duration;
+}
+
+.location-map-wrapper--collapsed .location-map {
+  filter: blur(4px);
+  will-change: filter;
+}
+
+.location-map-wrapper--expanded .location-map {
+
+}

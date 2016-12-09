@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 846 345" preserveAspectRatio="xMidYMin slice">
+  <title>floor-1</title>
+  <image width="846" height="345" xlink:href="img/plans/floor-1.png"/>
+  <polygon data-id="1" class="place" points="352.5 81.8 352.5 147 382.5 147 382.5 79.9 352.5 81.8" fill="#5de" stroke="#07d" stroke-miterlimit="10"/>
+  <polygon data-id="2" class="place" points="320.5 83.7 320.5 147 352.5 147 352.5 81.8 320.5 83.7" fill="#5de" stroke="#07d" stroke-miterlimit="10"/>
+  <polygon data-id="3" class="place" points="382.5 79.9 382.5 147 412.5 147 412.5 78.1 382.5 79.9" fill="#5de" stroke="#07d" stroke-miterlimit="10"/>
+  <polygon data-id="4" class="place" points="290.5 85.5 290.5 147 320.5 147 320.5 83.7 290.5 85.5" fill="#5de" stroke="#07d" stroke-miterlimit="10"/>
+  <polygon data-id="5" class="place" points="472.5 74.5 472.5 147 515.5 147 515.5 71.9 472.5 74.5" fill="#5de" stroke="#07d" stroke-miterlimit="10"/>
+  <polygon data-id="6" class="place" points="412.5 78.1 412.5 147 442.5 147 442.5 76.3 412.5 78.1" fill="#5de" stroke="#07d" stroke-miterlimit="10"/>
+  <polygon data-id="7" class="place" points="555.5 69.5 515.5 71.9 515.5 147 555.5 147 555.5 69.5" fill="#5de" stroke="#07d" stroke-miterlimit="10"/>
+  <polygon data-id="8" class="place" points="442.5 76.3 442.5 147 472.5 147 472.5 74.5 442.5 76.3" fill="#5de" stroke="#07d" stroke-miterlimit="10"/>
+</svg>

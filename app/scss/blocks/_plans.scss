@@ -1,0 +1,49 @@
+.place {
+  fill: #f0d38f;
+
+  &:hover {
+    fill: #8dc6ed;
+  }
+
+  &--busy {
+    fill: #ccc;
+  }
+
+  &--clicked,
+  &--clicked:hover {
+    fill: #2d1;
+  }
+}
+
+
+
+.ballon-place {
+  @include border-rounded();
+  position: absolute;
+  padding: 25px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 33px rgba(#000, 0.3);
+}
+
+.ballon-place__logo {
+  margin-bottom: 1rem;
+}
+
+.ballon-place__info {
+  font-size: rem(25);
+  font-family: "bruskovayaplain";
+  margin-bottom: 1rem;
+}
+
+.ballon-place__area {
+  font-size: rem(36);
+  margin-bottom: 10px;
+}
+
+.ballon-place__status {
+
+}

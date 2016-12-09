@@ -19,7 +19,11 @@ var del = require('del');
 
 gulp.task('style', function() {
   return gulp.src('app/scss/style.scss')
-    .pipe(plumber())
+    .pipe(plumber({
+      errorHandler: function(err) {
+        console.log(err);
+      }
+    }))
     .pipe(sass())
     .pipe(postcss([
       autoprefixer({

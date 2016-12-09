@@ -58,7 +58,7 @@ gulp.task('plugins-js', function() {
 });
 
 gulp.task('copy-script', function() {
-  gulp.src(['app/js/*.js', '!app/js/plugins/**'])
+  gulp.src(['app/js/*.{js,json}', '!app/js/plugins/**'])
     .pipe(gulp.dest('build/js'))
     .pipe(browserSync.stream());
 });

@@ -225,88 +225,53 @@ document.addEventListener('DOMContentLoaded', function() {
   =            Plans            =
   =============================*/
   
-  var placesInfo = {
-    '1': {
-      area: '37,2',
-      statusCode: '1',
-      status: 'Продается'
-    },
-    '2': {
-      area: '47,24',
-      statusCode: '1',
-      status: 'Продается'
-    },
-    '3': {
-      area: '17,24',
-      statusCode: '1',
-      status: 'Продается'
-    },
-    '4': {
-      area: '13,8',
-      statusCode: '0',
-      status: 'Занят'
-    },
-    '5': {
-      area: '32,2',
-      statusCode: '1',
-      status: 'Продается'
-    },
-    '6': {
-      area: '74,24',
-      statusCode: '1',
-      status: 'Продается'
-    },
-    '7': {
-      area: '172,4',
-      statusCode: '1',
-      status: 'Продается'
-    },
-    '8': {
-      area: '71,24',
-      statusCode: '1',
-      status: 'Продается'
-    },
-  }
-  var plan = document.querySelector('.plan');
-  var ballonPlace = document.querySelector('.ballon-place');
-  var places = document.querySelectorAll('.place');
+  var getPlacesInfo = $.getJSON('js/places.json');
 
-  Array.prototype.forEach.call(places, function(place) {
-    var dataId = place.dataset.id;
-    if (placesInfo[dataId].statusCode === '0') {
-      place.classList.add('place--busy');
-    }
+  getPlacesInfo.done(function(data) {
+    var placesInfo = data;
+    var plan = document.querySelector('.plan');
+    var ballonPlace = document.querySelector('.ballon-place');
+    var places = document.querySelectorAll('.place');
+
+    Array.prototype.forEach.call(places, function(place) {
+      var dataId = place.dataset.id;
+      if (placesInfo[dataId].statusCode === '0') {
+        place.classList.add('place--busy');
+      }
+    });
+
+    $(plan).on('click', '.place:not(.place--busy)', function(event) {
+
+      event.preventDefault();
+      var place = event.target;
+      var placeId = place.dataset.id;
+      var placeInfo = placesInfo[placeId];
+      var pointerPos = {
+        x: event.pageX,
+        y: event.pageY
+      }
+
+      document.querySelector('.ballon-place__area').textContent = placeInfo.area + 'м²';
+      document.querySelector('.ballon-place__status').textContent = placeInfo.status;
+
+      if (!place.classList.contains('place--clicked')) {
+        Array.prototype.forEach.call(places, function(place) {
+          place.classList.remove('place--clicked');
+        });
+        place.classList.add('place--clicked')
+        ballonPlace = document.querySelector('.ballon-place');
+        $(ballonPlace).show();
+      } else {
+        place.classList.remove('place--clicked')
+        $(ballonPlace).hide();
+      }
+
+      ballonPlace.style.left = pointerPos.x + 15 + 'px';
+      ballonPlace.style.top = pointerPos.y + 15 + 'px';
+    });
   });
 
-  $(plan).on('click', '.place:not(.place--busy)', function(event) {
-
-    event.preventDefault();
-    var place = event.target;
-    var placeId = place.dataset.id;
-    var placeInfo = placesInfo[placeId];
-    var pointerPos = {
-      x: event.pageX,
-      y: event.pageY
-    }
-
-    document.querySelector('.ballon-place__area').textContent = placeInfo.area + 'м²';
-    document.querySelector('.ballon-place__status').textContent = placeInfo.status;
-
-    if (!place.classList.contains('place--clicked')) {
-      Array.prototype.forEach.call(places, function(place) {
-        place.classList.remove('place--clicked');
-      });
-      place.classList.add('place--clicked')
-      ballonPlace = document.querySelector('.ballon-place');
-      $(ballonPlace).show();
-    } else {
-      place.classList.remove('place--clicked')
-      $(ballonPlace).hide();
-    }
-
-    ballonPlace.style.left = pointerPos.x + 15 + 'px';
-    ballonPlace.style.top = pointerPos.y + 15 + 'px';
-  });
+  
 
   /*=====  End of Plans  ======*/
   

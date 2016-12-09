@@ -1,0 +1,42 @@
+{
+  "1": {
+    "area": "37,2",
+    "statusCode": "1",
+    "status": "Продается"
+  },
+  "2": {
+    "area": "47,24",
+    "statusCode": "1",
+    "status": "Продается"
+  },
+  "3": {
+    "area": "17,24",
+    "statusCode": "1",
+    "status": "Продается"
+  },
+  "4": {
+    "area": "13,8",
+    "statusCode": "0",
+    "status": "Занят"
+  },
+  "5": {
+    "area": "32,2",
+    "statusCode": "1",
+    "status": "Продается"
+  },
+  "6": {
+    "area": "74,24",
+    "statusCode": "1",
+    "status": "Продается"
+  },
+  "7": {
+    "area": "172,4",
+    "statusCode": "1",
+    "status": "Продается"
+  },
+  "8": {
+    "area": "71,24",
+    "statusCode": "1",
+    "status": "Продается"
+  }
+}

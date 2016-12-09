@@ -1,12 +1,16 @@
 .place {
   fill: #f0d38f;
+  cursor: pointer;
+  transition: 0.25s;
 
   &:hover {
     fill: #8dc6ed;
   }
 
-  &--busy {
+  &--busy,
+  &--busy:hover {
     fill: #ccc;
+    cursor: default;
   }
 
   &--clicked,
@@ -18,6 +22,7 @@
 
 
 .ballon-place {
+  display: none;
   @include border-rounded();
   position: absolute;
   padding: 25px;

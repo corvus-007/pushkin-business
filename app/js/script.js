@@ -32,6 +32,11 @@ function initializeMap() {
     return {
       center: defaultLocation,
       zoom: 16,
+      streetViewControl: false,
+      zoomControl: true,
+      zoomControlOptions: {
+          position: google.maps.ControlPosition.RIGHT_CENTER
+      },
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       scrollwheel: false,
       styles: [{
@@ -240,16 +245,36 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    $(plan).on('click', '.place:not(.place--busy)', function(event) {
+    $('body').on('click', function(event) {
+
+      if (event.target.closest('.ballon-place')) {
+        return;
+      }
+
+      if (event.target.classList.contains('place--busy')) {
+        return;
+      }
+
+      if (!event.target.classList.contains('place')) {
+        $(ballonPlace).hide();
+        Array.prototype.forEach.call(places, function(place) {
+          place.classList.remove('place--clicked');
+        });
+        return;
+      }
+
 
       event.preventDefault();
       var place = event.target;
       var placeId = place.dataset.id;
       var placeInfo = placesInfo[placeId];
+
       var pointerPos = {
         x: event.pageX,
         y: event.pageY
       }
+
+
 
       document.querySelector('.ballon-place__area').textContent = placeInfo.area + 'м²';
       document.querySelector('.ballon-place__status').textContent = placeInfo.status;
@@ -259,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
           place.classList.remove('place--clicked');
         });
         place.classList.add('place--clicked')
-        ballonPlace = document.querySelector('.ballon-place');
+        // ballonPlace = document.querySelector('.ballon-place');
         $(ballonPlace).show();
       } else {
         place.classList.remove('place--clicked')
@@ -270,6 +295,8 @@ document.addEventListener('DOMContentLoaded', function() {
       ballonPlace.style.top = pointerPos.y + 15 + 'px';
     });
   });
+
+
 
   
 

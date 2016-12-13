@@ -131,5 +131,5 @@ gulp.task('serve', function() {
   });
   gulp.watch('app/js/plugins/*.js', ['plugins-js']);
   gulp.watch('app/js/script.js', ['copy-script']);
-  gulp.watch(['app/*.html', 'app/blocks/**/*.html'], ['fileinclude']).on('change', browserSync.reload);
+  gulp.watch(['app/*.html', 'app/blocks/**/*.{html,svg}'], ['fileinclude']).on('change', browserSync.reload);
 });

@@ -12,14 +12,18 @@
 
   &--busy,
   &--busy:hover {
-    fill: #ccc;
+    fill: #c4c4c4;
     cursor: default;
   }
 
   &--clicked,
   &--clicked:hover {
-    fill: #2d1;
+    fill: #1ee2bb;
   }
+}
+
+.plan svg g *:not(.place) {
+  pointer-events: none;
 }
 
 

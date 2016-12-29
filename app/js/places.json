@@ -1,41 +1,61 @@
 {
-  "1": {
-    "area": "37,2",
+  "place_1_1": {
+    "area": "60,3",
     "statusCode": "1",
     "status": "Продается"
   },
-  "2": {
-    "area": "47,24",
+  "place_1_2": {
+    "area": "158,8",
     "statusCode": "1",
     "status": "Продается"
   },
-  "3": {
-    "area": "17,24",
+  "place_1_3": {
+    "area": "240,3",
     "statusCode": "1",
     "status": "Продается"
   },
-  "4": {
-    "area": "13,8",
+  "place_1_4": {
+    "area": "158,7",
     "statusCode": "0",
     "status": "Занят"
   },
-  "5": {
-    "area": "32,2",
+  "place_1_5": {
+    "area": "94,9",
     "statusCode": "1",
     "status": "Продается"
   },
-  "6": {
-    "area": "74,24",
+  "place_1_6": {
+    "area": "60,9",
     "statusCode": "1",
     "status": "Продается"
   },
-  "7": {
-    "area": "172,4",
+  "place_1_7": {
+    "area": "41,4",
     "statusCode": "1",
     "status": "Продается"
   },
-  "8": {
-    "area": "71,24",
+  "place_1_8": {
+    "area": "101,9",
+    "statusCode": "1",
+    "status": "Продается"
+  },
+  "place_1_9": {
+    "area": "151,7",
+    "statusCode": "0",
+    "status": "Занят"
+  },
+  "place_2_1": {
+    "area": "474,8",
+    "statusCode": "1",
+    "status": "Продается"
+  },
+  "place_2_2": {
+    "area": "134,4",
+    "statusCode": "1",
+    "status": "Продается"
+  },
+  "place_2_3": {
+    "area": "608,1",
     "statusCode": "1",
     "status": "Продается"
   }

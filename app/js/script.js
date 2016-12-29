@@ -226,11 +226,21 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+  /*============================
+  =            Tabs            =
+  ============================*/
+
+  $('.tabs').tabslet({
+    animation: true
+  });
+
+
+
   /*=============================
   =            Plans            =
   =============================*/
-  
-  var getPlacesInfo = $.getJSON('js/places.json');
+
+  var getPlacesInfo = $.getJSON('http://business.pushkin-plaza.ru/wp-content/themes/business-pushkin/scripts/places.json');
 
   getPlacesInfo.done(function(data) {
     var placesInfo = data;
@@ -239,14 +249,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var places = document.querySelectorAll('.place');
 
     Array.prototype.forEach.call(places, function(place) {
-      var dataId = place.dataset.id;
+      var dataId = place.id;
       if (placesInfo[dataId].statusCode === '0') {
         place.classList.add('place--busy');
       }
     });
 
     $('body').on('click', function(event) {
-
       if (event.target.closest('.ballon-place')) {
         return;
       }
@@ -266,15 +275,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
       event.preventDefault();
       var place = event.target;
-      var placeId = place.dataset.id;
+      var placeId = place.id;
       var placeInfo = placesInfo[placeId];
 
       var pointerPos = {
         x: event.pageX,
         y: event.pageY
       }
-
-
 
       document.querySelector('.ballon-place__area').textContent = placeInfo.area + 'м²';
       document.querySelector('.ballon-place__status').textContent = placeInfo.status;
@@ -284,7 +291,6 @@ document.addEventListener('DOMContentLoaded', function() {
           place.classList.remove('place--clicked');
         });
         place.classList.add('place--clicked')
-        // ballonPlace = document.querySelector('.ballon-place');
         $(ballonPlace).show();
       } else {
         place.classList.remove('place--clicked')
@@ -296,13 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-
-
-  
-
   /*=====  End of Plans  ======*/
-  
-
 
 
 
@@ -312,10 +312,7 @@ document.addEventListener('DOMContentLoaded', function() {
   ==================================*/
 
   // Phone
-  $('input[type="tel"]').inputmask("+7 (999) 999 99 99", {
-    // clearMaskOnLostFocus: false,
-    // jitMasking: true
-  });
+  $('input[type="tel"]').inputmask("+7 (999) 999 99 99", {});
 
   /*=====  End of Input mask  ======*/
 

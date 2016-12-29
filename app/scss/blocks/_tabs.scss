@@ -1,0 +1,65 @@
+.tabs {
+
+}
+
+.tabs__panel {
+  @include clear-list();
+  @include container();
+  display: flex;
+  justify-content: center;
+  margin-bottom: rem(50);
+  
+  li {
+    margin-right: 2rem;
+    font-size: rem(24);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 2px 1px;
+    color: $muted-color;
+    text-decoration: none;
+    border-bottom: 1px solid $light-color;
+    transition: 0.25s;
+
+    &:hover {
+      border-bottom-color: currentColor;
+    }
+  }
+
+  .active a {
+    border-bottom-color: transparent;
+    color: currentColor;
+    cursor: default;
+  }
+}
+
+.plan-section .tabs__content {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media (min-width: $media-laptop) {
+  .plan-section .tabs__content {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+}
+
+@media (min-width: $media-laptop-l) {
+  .plan-section .tabs__content {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
+
+@media (min-width: $media-laptop-xl) {
+  .plan-section .tabs__content {
+    margin-left: 15rem;
+    margin-right: 15rem;
+  }
+}

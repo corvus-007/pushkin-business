@@ -26,7 +26,7 @@ $transition-duration: 0.5s;
     height: 50px;
     z-index: 2;
     pointer-events: none;
-    background: url("img/location-map-decor.png") repeat-x bottom right / auto 100%;
+    background: url("images/location-map-decor.png") repeat-x bottom right / auto 100%;
   }
 
   &--collapsed {
@@ -47,7 +47,8 @@ $transition-duration: 0.5s;
 .location-map__trigger-wrapper {
   position: absolute;
   z-index: 2;
-  top: 30px;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   text-align: center;
@@ -63,6 +64,9 @@ $transition-duration: 0.5s;
 .location-map__trigger {
   display: inline-block;
   padding: 5px;
+  padding-bottom: 40px;
+  height: 100%;
+  width: 100%;
   border: none;
   font-family: inherit;
   font-size: rem(24);

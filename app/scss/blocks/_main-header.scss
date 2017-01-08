@@ -1,11 +1,11 @@
 .main-header {
   background-color: rgba($base-color, 0.8);
   background-image: linear-gradient(rgba($base-color, 0.8), rgba($base-color, 0.8)),
-                    url("img/bg-main-header.jpg");
+                    url("images/bg-main-header.jpg");
   background-image: linear-gradient(rgba($base-color, 0.8), rgba($base-color, 0.8)),
                     image-set(
-                      url("img/bg-main-header.jpg") 1x,
-                      url("img/bg-main-header@2x.jpg") 2x
+                      url("images/bg-main-header.jpg") 1x,
+                      url("images/bg-main-header@2x.jpg") 2x
                     );
   background-repeat: no-repeat;
   background-position: bottom;

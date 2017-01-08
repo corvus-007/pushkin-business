@@ -1,5 +1,5 @@
 .form-item {
-  margin-bottom: rem(15);
+  margin-bottom: rem(20);
   display: block;
 }
 
@@ -81,15 +81,20 @@ textarea.form-control {
   }
 }
 span.wpcf7-not-valid-tip {
+  // display: inline-block;
+  display: none;
   position: absolute;
   left: 0;
   right: 0;
   top: 100%;
-  padding: 5px 10px;
+  padding: 3px 10px;
   background-color: $danger-color;
   color: #fff;
-  display: inline-block;
   font-size: rem(11);
+}
+
+div.wpcf7 .ajax-loader {
+  display: none;
 }
 
 .form-control {
@@ -109,10 +114,11 @@ span.wpcf7-not-valid-tip {
   }
 }
 
-.wpcf7-response-output {
+div.wpcf7-response-output {
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0;
   font-size: rem(14);
   padding: 0.5em 0.7em;
   border: 2px solid;

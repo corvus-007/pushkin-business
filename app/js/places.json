@@ -16,8 +16,8 @@
   },
   "place_1_4": {
     "area": "158,7",
-    "statusCode": "0",
-    "status": "Занят"
+    "statusCode": "1",
+    "status": "Продается"
   },
   "place_1_5": {
     "area": "94,9",
@@ -41,8 +41,8 @@
   },
   "place_1_9": {
     "area": "151,7",
-    "statusCode": "0",
-    "status": "Занят"
+    "statusCode": "1",
+    "status": "Продается"
   },
   "place_2_1": {
     "area": "474,8",

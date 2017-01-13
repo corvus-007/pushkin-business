@@ -194,6 +194,42 @@ function initializeMap() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+
+  var invisibleHolder = document.querySelector('.invisible-holder');
+
+  /*==================================
+  =            Docs panel            =
+  ==================================*/
+  
+  var triggerBtnDocsPanel = document.querySelector('.js-trigger-docs-panel');
+  var docsPanel = document.querySelector('.docs-panel');
+  var docsPanelClose = docsPanel.querySelector('.docs-panel__close');
+
+  docsPanel.classList.add('docs-panel--closed');
+  invisibleHolder.classList.add('invisible-holder--closed');
+
+  if (docsPanel) {
+    triggerBtnDocsPanel.addEventListener('click', togglePanel);
+    docsPanelClose.addEventListener('click', togglePanel);
+  }
+
+  function togglePanel(event) {
+    event.preventDefault();
+    if (docsPanel.classList.contains('docs-panel--closed')) {
+      docsPanel.classList.remove('docs-panel--closed');
+      docsPanel.classList.add('docs-panel--opened');
+      invisibleHolder.classList.remove('invisible-holder--closed');
+      invisibleHolder.classList.add('invisible-holder--opened');
+    } else {
+      docsPanel.classList.remove('docs-panel--opened');
+      docsPanel.classList.add('docs-panel--closed');
+      invisibleHolder.classList.remove('invisible-holder--opened');
+      invisibleHolder.classList.add('invisible-holder--closed');
+    }
+  }
+  
+  /*=====  End of Docs panel  ======*/
+  
   var $locationMap = $('#location-map');
   var locationMapWrapper = document.querySelector('.location-map-wrapper');
   var jsLocationMapTrigger = document.querySelector('.js-location-map-trigger');

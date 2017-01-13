@@ -1,0 +1,144 @@
+$panel-color: #4E342E;
+
+.docs-panel {
+  position: relative;
+  // width: 320px;
+  bottom: 0;
+  margin-left: 260px;
+  margin-top: 48px;
+  // float: left;
+  transition: transform 0.3s;
+  will-change: transform;
+}
+
+.docs-panel--opened {
+}
+
+.docs-panel--closed {
+  transform: translateY(100%);
+}
+
+.docs-panel__close {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  overflow: hidden;
+  width: 48px;
+  height: 48px;
+  outline: none;
+  border: none;
+  background: darken($panel-color, 5%);
+  text-indent: -1000px;
+  font-size: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease-out, background-color 0.2s;
+
+  will-change: transform;
+}
+
+.docs-panel__close::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23fff' d='M38 12.8L35.2 10 24 21.2 12.8 10 10 12.8 21.2 24 10 35.2l2.8 2.8L24 26.8 35.2 38l2.8-2.8L26.8 24z'/%3E%3C/svg%3E");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+.docs-panel__close:hover {
+  background: $panel-color;
+}
+
+.docs-panel--opened .docs-panel__close {
+  transition-delay: 0.3s, 0s;
+}
+
+.docs-panel--closed .docs-panel__close {
+  transform: translateY(100%);
+}
+
+.docs-panel__list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  max-height: calc(100vh - 8rem);
+  list-style: none;
+  overflow: auto;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #fff;
+  background-color: $panel-color;
+}
+
+.docs-panel__title {
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.docs-panel__content {
+  margin: 0;
+  padding: 1em;
+  padding-left: 50px;
+  background-color: darken($panel-color, 2%);
+}
+
+.docs-panel__link {
+  position: relative;
+  display: block;
+  padding: 13px;
+  padding-left: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: currentColor;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-out;
+  cursor: pointer;
+}
+
+.docs-panel__link[href^="#"] {
+  cursor: default;
+}
+
+.docs-panel__link::before {
+  position: absolute;
+  left: 20px;
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23fff' d='M28 4H12C9.8 4 8 5.8 8 8v32c0 2.2 1.8 4 4 4h24c2.2 0 4-1.8 4-4V16L28 4zm4 32H16v-4h16v4zm0-8H16v-4h16v4zm-6-10V7l11 11H26z'/%3E%3C/svg%3E");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  transition: background 0.3s ease-out;
+}
+
+.docs-panel__link:hover,
+.is-opened .docs-panel__link {
+  background-color: darken($panel-color, 4%);
+  color: currentColor;
+}
+
+.docs-panel__sublist {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.docs-panel__sublist li:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+.docs-panel__sublist a {
+  color: currentColor;
+  text-decoration: none;
+  line-height: 1.4;
+}

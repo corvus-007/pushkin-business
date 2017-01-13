@@ -139,8 +139,6 @@
     @@include('blocks/main-panel-footer.html')
   </div>
 
-  @@include('blocks/main-footer.html')
-
   <div class="ballon-place">
     <div class="ballon-place__logo">
       <img src="images/logo-hat.png" srcset="images/logo-hat@2x.png 2x" alt="">
@@ -152,7 +150,31 @@
     <a class="button button--small js-trigger-inline-popup" href="#popup-callback">Оставить заявку</a>
   </div>
 
+  <div class="invisible-holder">
+    <div class="docs-panel docs-panel--closed">
+      <button class="docs-panel__close" type="button" title="Закрыть">Закрыть</button>
+      <h2 class="visually-hidden">Документация</h2>
+      <div class="docs-panel__list accordion js-accordion">
+        <!-- <div class="docs-panel__title accordion__label">
+          <a href="#" class="docs-panel__link">Проектная декларация</a>
+        </div>
+        <div class="docs-panel__title accordion__label">
+          <a href="#" class="docs-panel__link">Изменения к проектной декларации от 30.12.2016</a>
+        </div>
+        <div class="docs-panel__content accordion__content">
+          <ul class="docs-panel__sublist">
+            <li><a href="">Первый документ</a></li>
+            <li><a href="">Второй документ</a></li>
+          </ul>
+        </div> -->
+        <a href="<?php bloginfo('template_directory'); ?>/docs/izmenenie_(30.12.2016).pdf" class="docs-panel__link">Изменения к проектной декларации от 30.12.2016</a>
+      </div>
+    </div>
+  </div>
+
   <!-- Обратный звонок -->
   @@include('blocks/popup-callback.html')
+
+  @@include('blocks/main-footer.html')
 </body>
 </html>

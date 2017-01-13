@@ -1,0 +1,17 @@
+.invisible-holder {
+  position: fixed;
+  bottom: 0;
+  // left: 0;
+  // right: 0;
+  overflow: hidden;
+  z-index: 50;
+
+  &--closed {
+    visibility: hidden;
+    transition: visibility 0s 0.3s;
+  }
+
+  &--opened {
+    visibility: visible;
+  }
+}

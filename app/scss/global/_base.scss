@@ -64,7 +64,8 @@ img {
   vertical-align: middle;
 }
 
-.visuallyhidden:not(:focus):not(:active) {
+.visuallyhidden:not(:focus):not(:active),
+.visually-hidden {
   position: absolute;
 
   width: 1px;

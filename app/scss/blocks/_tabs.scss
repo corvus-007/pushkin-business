@@ -4,7 +4,7 @@
 
 .tabs__panel {
   @include clear-list();
-  @include container();
+  // @include container();
   display: flex;
   justify-content: center;
   margin-bottom: rem(50);
@@ -37,29 +37,3 @@
     cursor: default;
   }
 }
-
-// .plan-section .tabs__content {
-//   margin-left: 1rem;
-//   margin-right: 1rem;
-// }
-
-// @media (min-width: $media-laptop) {
-//   .plan-section .tabs__content {
-//     margin-left: 5rem;
-//     margin-right: 5rem;
-//   }
-// }
-
-// @media (min-width: $media-laptop-l) {
-//   .plan-section .tabs__content {
-//     margin-left: 10rem;
-//     margin-right: 10rem;
-//   }
-// }
-
-// @media (min-width: $media-laptop-xl) {
-//   .plan-section .tabs__content {
-//     margin-left: 15rem;
-//     margin-right: 15rem;
-//   }
-// }

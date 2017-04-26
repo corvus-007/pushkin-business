@@ -1,4 +1,7 @@
 .main-header {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  color: #fff;
   background-color: rgba($base-color, 0.8);
   background-image: linear-gradient(rgba($base-color, 0.8), rgba($base-color, 0.8)),
                     url("images/bg-main-header.jpg");
@@ -10,7 +13,6 @@
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  color: #fff;
 }
 
 .main-header__inner {
@@ -26,7 +28,7 @@
   text-align: center;
   line-height: normal;
   font-family: "bruskovayaplain";
-  
+
   span {
     display: block;
     text-transform: uppercase;

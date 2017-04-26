@@ -11,38 +11,29 @@
   <div class="main-wrapper">
     @@include('blocks/main-panel-header.html')
 
-    <header class="main-header">
-      <div class="main-header__inner container">
-        <h1 class="main-header__title">
-          ПушкинЪ
-          <span>плаза</span>
-        </h1>
-        <div class="main-header__logo">
-          <img src="images/logo-hat.png" srcset="images/logo-hat@2x.png 2x" alt="" />
-        </div>
-
-        <div class="styled-box">
-          <div class="styled-box__title">
-            <span>Современный бизнес-центр</span>
-          </div>
-          <div class="styled-box__body">
-            <ul class="features-header">
-              <li class="features-header__item">
-                Уникальная архитектура здания позволяет охватывать торговые площади по совершенно новой технологии
-              </li>
-              <li class="features-header__item">
-                Уникальная архитектура здания позволяет охватывать торговые площади по совершенно новой технологии
-              </li>
-              <li class="features-header__item">
-                Уникальная архитектура здания позволяет охватывать торговые площади по совершенно новой технологии
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </header>
-
     <main class="main">
+      <section class="section plan-section">
+        <div class="section__inner">
+          <header class="section__header container">
+            <h2 class="section__title">Планировки торговых площадей</h2>
+          </header>
+          <div class="plan-section__content container">
+            <div class="tabs">
+              <ul class="tabs__panel">
+                <li><a href="#tab-floor-1">Планировка 1-го этажа</a></li>
+                <li><a href="#tab-floor-2">Планировка 2-го этажа</a></li>
+                <li><a href="#tab-genplan">Генплан</a></li>
+              </ul>
+              <div class="tabs__content plan" id="tab-floor-1">@@include('blocks/floor-1.svg')</div>
+              <div class="tabs__content plan" id="tab-floor-2">@@include('blocks/floor-2.svg')</div>
+              <div class="tabs__content plan" id="tab-genplan">
+                <img src="images/genplan.png" alt="Генплан">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section intro-section">
         <div class="section__inner">
           <header class="section__header container">
@@ -89,27 +80,36 @@
         </div>
       </section>
 
-      <section class="section plan-section">
-        <div class="section__inner">
-          <header class="section__header container">
-            <h2 class="section__title">Планировки торговых площадей</h2>
-          </header>
-          <div class="plan-section__content container">
-            <div class="tabs">
-              <ul class="tabs__panel">
-                <li><a href="#tab-floor-1">Планировка 1-го этажа</a></li>
-                <li><a href="#tab-floor-2">Планировка 2-го этажа</a></li>
-                <li><a href="#tab-genplan">Генплан</a></li>
+      <header class="main-header">
+        <div class="main-header__inner container">
+          <h1 class="main-header__title">
+            ПушкинЪ
+            <span>плаза</span>
+          </h1>
+          <div class="main-header__logo">
+            <img src="images/logo-hat.png" srcset="images/logo-hat@2x.png 2x" alt="" />
+          </div>
+
+          <div class="styled-box">
+            <div class="styled-box__title">
+              <span>Современный бизнес-центр</span>
+            </div>
+            <div class="styled-box__body">
+              <ul class="features-header">
+                <li class="features-header__item">
+                  Уникальная архитектура здания позволяет охватывать торговые площади по совершенно новой технологии
+                </li>
+                <li class="features-header__item">
+                  Уникальная архитектура здания позволяет охватывать торговые площади по совершенно новой технологии
+                </li>
+                <li class="features-header__item">
+                  Уникальная архитектура здания позволяет охватывать торговые площади по совершенно новой технологии
+                </li>
               </ul>
-              <div class="tabs__content plan" id="tab-floor-1">@@include('blocks/floor-1.svg')</div>
-              <div class="tabs__content plan" id="tab-floor-2">@@include('blocks/floor-2.svg')</div>
-              <div class="tabs__content plan" id="tab-genplan">
-                <img src="images/genplan.png" alt="Генплан">
-              </div>
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
       <div class="section cta-section">
         <div class="section__inner container">
